@@ -1,0 +1,13 @@
+
+*.txt
+previa/template_Article.log
+*.pdf
+previa/template_Article.synctex.gz
+*.tex
+*.o
+*.exe
+*.out
+*.ppt
+equacaoDoCalor.layout
+equacaoDoCalor.depend
+equacaoDoCalor.cbp
