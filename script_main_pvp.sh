@@ -1,19 +1,36 @@
 #!/sbin/bash
 
 CC=gcc
-FLAGS="-march=corei7-avx"
+CFLAGS="-march=native -mtune=native"
+DIRNOFLAGS="./bin/noflags"
 DIRFLAGS="./bin/flags"
 DIROPENMP="./bin/openMP"
 DIRMAIN="../../"
 
 echo "construindo executaveis..."
 
+echo "noflags"
+mkdir $DIRNOFLAGS
+
+for i in 0 1 2 3
+do
+	$CC -g -pg -O$i $CFLAGS mainOtm.c -o $DIRNOFLAGS/mainOtm-0$i
+done
+
 echo "flags"
 mkdir $DIRFLAGS
-$CC -g -pg -O3 $FLAGS mainOtm.c -o $DIRFLAGS/mainOtm-03
+
+for i in 0 1 2 3
+do
+	$CC -g -pg -O$i $CFLAGS mainOtm.c -o $DIRFLAGS/mainOtm-0$i
+done
+
 echo "OpenMP"
 mkdir $DIROPENMP
-$CC -g -pg -fopenmp -O3 $FLAGS mainPll.c -o $DIROPENMP/mainPll-03
+for i in 0 1 2 3
+do
+$CC -g -pg -fopenmp -O$i $CFLAGS mainPll.c -o $DIROPENMP/mainPll-0$i
+done
 
 echo "gerando os setups"
 
