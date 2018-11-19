@@ -9,5 +9,6 @@ Projeto final HCP sobre equação de calor
 
 # Diretorios
 
-* bin : contem os binarios e as animações da simulação
+* bin : contem os binarios, benchmarks e profiling dos codiigos
+* gifs : conem as animações da simulação
 
