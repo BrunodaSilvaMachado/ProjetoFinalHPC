@@ -9,6 +9,8 @@ DIRMAIN="../../"
 
 echo "construindo executaveis..."
 
+mkdir "bin"
+
 echo "noflags"
 mkdir $DIRNOFLAGS
 
